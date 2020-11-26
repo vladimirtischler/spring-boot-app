@@ -7,4 +7,5 @@ import java.util.List;
 interface EmployeService {
     double getTotalSalary(List<Job> jobs);
     int getTotalBonus(List<Job> jobs);
+    int writeNumber();
 }

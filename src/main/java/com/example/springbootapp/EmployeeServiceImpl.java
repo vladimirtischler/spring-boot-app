@@ -8,6 +8,7 @@ import java.util.List;
 @Service
 public class EmployeeServiceImpl implements EmployeService {
     int number = 0;
+    @Override
     public int writeNumber(){
        return number+=1;
     }

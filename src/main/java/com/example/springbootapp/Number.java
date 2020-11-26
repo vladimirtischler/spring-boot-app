@@ -1,8 +1,11 @@
 package com.example.springbootapp;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Number {
-    EmployeeServiceImpl employeeService;
-    public Number(){
-        employeeService.writeNumber();
+
+    public Number(EmployeService employeService){
+        System.out.println(employeService.writeNumber());
     }
 }

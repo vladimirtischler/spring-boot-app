@@ -11,7 +11,7 @@ import java.util.List;
 
 @Component
 public class DependencyInjectionDemo{
-    EmployeeServiceImpl employeService;
+    EmployeService employeService;
     List<Job> jobs = Arrays.asList(new Programmer(300,2500),new Driver(250,1800),new Teacher(150,1000));
 
     public String getSum(List<Job> jobs)
@@ -19,11 +19,11 @@ public class DependencyInjectionDemo{
         return employeService.getTotalBonus(jobs)+" "+employeService.getTotalSalary(jobs);
     }
 
-    public DependencyInjectionDemo(EmployeeServiceImpl employeeService){
-        this.employeService = employeeService;
+    public DependencyInjectionDemo(EmployeService employeService){
+        this.employeService = employeService;
         System.out.println(getSum(jobs));
-        System.out.println(employeeService.writeNumber());
-        System.out.println(employeeService.writeNumber());
+        System.out.println(employeService.writeNumber());
+
     }
 
 }

@@ -1,5 +1,6 @@
-package com.example.springbootapp;
+package com.example.springbootapp.Employe.Controller;
 
+import com.example.springbootapp.Employe.Service.EmployeeService;
 import com.example.springbootapp.model.Driver;
 import com.example.springbootapp.model.Job;
 import com.example.springbootapp.model.Programmer;
@@ -13,10 +14,10 @@ import java.util.List;
 
 @RestController
 public class EmployeeController {
-    EmployeService employeService;
+    EmployeeService employeService;
     List<Job> jobs = Arrays.asList(new Programmer(300,2500),new Driver(250,1800),new Teacher(150,1000));
 
-    public EmployeeController(EmployeService employeService){
+    public EmployeeController(EmployeeService employeService){
         this.employeService = employeService;
     }
 

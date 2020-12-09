@@ -1,4 +1,4 @@
-package com.example.springbootapp;
+package com.example.springbootapp.Employe.Service;
 
 import com.example.springbootapp.model.Job;
 import org.springframework.stereotype.Service;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmployeeServiceImpl implements EmployeService {
+public class EmployeeServiceImpl implements EmployeeService {
     int number = 0;
     @Override
     public int writeNumber(){

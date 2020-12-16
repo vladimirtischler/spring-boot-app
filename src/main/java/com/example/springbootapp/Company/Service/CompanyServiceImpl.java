@@ -1,4 +1,4 @@
-package com.example.springbootapp.Company.Sevice;
+package com.example.springbootapp.Company.Service;
 
 import com.example.springbootapp.Company.Company;
 import com.example.springbootapp.Company.Repository.CompanyRepository;

@@ -1,8 +1,9 @@
 package com.example.springbootapp.Company.Controller;
 
 import com.example.springbootapp.Company.Company;
-import com.example.springbootapp.Company.Sevice.CompanyService;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.example.springbootapp.Company.Service.CompanyService;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,9 +14,8 @@ public class CompanyController {
         this.companyService = companyService;
     }
 
-    @GetMapping(value = "/company")
-    public void getCompany(){
-        Company company = new Company();
+    @PostMapping(value = "/postCompany")
+    public void postCompany(@RequestBody Company company){
         companyService.saveCompany(company);
     }
 }

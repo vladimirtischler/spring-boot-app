@@ -1,4 +1,4 @@
-package com.example.springbootapp.Database;
+package com.example.springbootapp.DatabaseEmploye;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

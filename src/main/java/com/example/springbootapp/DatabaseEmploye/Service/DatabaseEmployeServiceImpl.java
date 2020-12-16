@@ -1,7 +1,7 @@
-package com.example.springbootapp.Database.Service;
+package com.example.springbootapp.DatabaseEmploye.Service;
 
-import com.example.springbootapp.Database.Employe;
-import com.example.springbootapp.Database.Repository.EmployeRepository;
+import com.example.springbootapp.DatabaseEmploye.Employe;
+import com.example.springbootapp.DatabaseEmploye.Repository.EmployeRepository;
 import org.springframework.stereotype.Service;
 
 @Service

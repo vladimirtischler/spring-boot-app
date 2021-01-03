@@ -1,7 +1,13 @@
 package com.example.springbootapp.model;
 
-public class Driver extends Job {
-    public Driver(int bonus, float salary) {
-        super(bonus, salary, JobType.DRIVER);
+import javax.persistence.Entity;
+
+@Entity
+public class Driver extends Employe {
+    public Driver(int id,int bonus, float salary) {
+        super(id,bonus, salary, EmployeType.DRIVER);
+    }
+
+    public Driver() {
     }
 }

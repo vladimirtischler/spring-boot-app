@@ -1,12 +1,18 @@
 package com.example.springbootapp.model;
 
-public class Programmer extends Job {
-    public Programmer(int bonus, float salary ) {
-        super(bonus, salary, JobType.PROGRAMMER);
+import javax.persistence.Entity;
+
+@Entity
+public class Programmer extends Employe {
+    public Programmer(int id, int bonus, float salary ) {
+        super(id, bonus, salary, EmployeType.PROGRAMMER);
+    }
+
+    public Programmer() {
     }
 
     @Override
     public String getInfo(){
-        return jobType.value +"´s salary is "+ (salary+bonus)+".";
+        return employeType.value +"´s salary is "+ (salary+bonus)+".";
     }
 }

@@ -1,8 +1,14 @@
 package com.example.springbootapp.model;
 
-public class Teacher extends Job {
+import javax.persistence.Entity;
 
-    public Teacher(int bonus, float salary){
-        super(bonus,salary,JobType.TEACHER);
+@Entity
+public class Teacher extends Employe {
+
+    public Teacher(int id, int bonus, float salary){
+        super(id, bonus,salary, EmployeType.TEACHER);
+    }
+
+    public Teacher() {
     }
 }

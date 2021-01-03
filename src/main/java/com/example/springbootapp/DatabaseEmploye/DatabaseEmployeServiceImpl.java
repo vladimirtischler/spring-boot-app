@@ -1,11 +1,10 @@
-package com.example.springbootapp.DatabaseEmploye.Service;
+package com.example.springbootapp.DatabaseEmploye;
 
-import com.example.springbootapp.DatabaseEmploye.Employe;
-import com.example.springbootapp.DatabaseEmploye.Repository.EmployeRepository;
+import com.example.springbootapp.model.Employe;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DatabaseEmployeServiceImpl implements DatabaseEmployeService{
+public class DatabaseEmployeServiceImpl implements DatabaseEmployeService {
     EmployeRepository employeRepository;
 
     public DatabaseEmployeServiceImpl(EmployeRepository employeRepository){

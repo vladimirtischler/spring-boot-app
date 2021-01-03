@@ -1,6 +1,5 @@
 package com.example.springbootapp.Employe;
 
-import com.example.springbootapp.Employe.Service.EmployeeService;
 import org.springframework.stereotype.Component;
 
 @Component

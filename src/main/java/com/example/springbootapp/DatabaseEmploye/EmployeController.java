@@ -1,7 +1,6 @@
-package com.example.springbootapp.DatabaseEmploye.Controller;
+package com.example.springbootapp.DatabaseEmploye;
 
-import com.example.springbootapp.DatabaseEmploye.Employe;
-import com.example.springbootapp.DatabaseEmploye.Service.DatabaseEmployeService;
+import com.example.springbootapp.model.Employe;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

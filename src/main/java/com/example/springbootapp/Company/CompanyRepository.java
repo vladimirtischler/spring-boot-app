@@ -1,4 +1,4 @@
-package com.example.springbootapp.Company.Repository;
+package com.example.springbootapp.Company;
 
 import com.example.springbootapp.Company.Company;
 import org.springframework.data.repository.CrudRepository;

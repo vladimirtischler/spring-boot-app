@@ -1,6 +1,6 @@
-package com.example.springbootapp.DatabaseEmploye.Repository;
+package com.example.springbootapp.DatabaseEmploye;
 
-import com.example.springbootapp.DatabaseEmploye.Employe;
+import com.example.springbootapp.model.Employe;
 import org.springframework.data.repository.CrudRepository;
 
 public interface EmployeRepository extends CrudRepository<Employe, Integer> {

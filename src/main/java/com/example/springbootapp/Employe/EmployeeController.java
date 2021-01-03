@@ -1,8 +1,7 @@
-package com.example.springbootapp.Employe.Controller;
+package com.example.springbootapp.Employe;
 
-import com.example.springbootapp.Employe.Service.EmployeeService;
 import com.example.springbootapp.model.Driver;
-import com.example.springbootapp.model.Job;
+import com.example.springbootapp.model.Employe;
 import com.example.springbootapp.model.Programmer;
 import com.example.springbootapp.model.Teacher;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +14,7 @@ import java.util.List;
 @RestController
 public class EmployeeController {
     EmployeeService employeService;
-    List<Job> jobs = Arrays.asList(new Programmer(300,2500),new Driver(250,1800),new Teacher(150,1000));
+    List<Employe> employes = Arrays.asList(new Programmer(0,300,2500),new Driver(0,250,1800),new Teacher(0,150,1000));
 
     public EmployeeController(EmployeeService employeService){
         this.employeService = employeService;
@@ -28,12 +27,12 @@ public class EmployeeController {
 
     @GetMapping(value = "/bonus")
     public int totalBonus(){
-        return employeService.getTotalBonus(jobs);
+        return employeService.getTotalBonus(employes);
     }
 
     @GetMapping(value = "/salary")
     public double totalSalary(){
-        return employeService.getTotalSalary(jobs);
+        return employeService.getTotalSalary(employes);
     }
 
     @GetMapping(value = "/snail")

@@ -1,7 +1,5 @@
-package com.example.springbootapp.Company.Service;
+package com.example.springbootapp.Company;
 
-import com.example.springbootapp.Company.Company;
-import com.example.springbootapp.Company.Repository.CompanyRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -8,6 +8,7 @@ public enum EmployeType {
     DRIVER("Driver");
 
     String value;
+
     EmployeType(String value){
         this.value = value;
     }

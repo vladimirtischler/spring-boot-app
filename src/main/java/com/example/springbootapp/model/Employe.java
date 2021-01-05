@@ -15,7 +15,10 @@ import javax.persistence.*;
         @JsonSubTypes.Type(value = Programmer.class, name = "Programmer"),
         @JsonSubTypes.Type(value = Teacher.class, name = "Teacher")
 })
+
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "employeType", discriminatorType = DiscriminatorType.STRING)
 public class Employe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,15 +27,16 @@ public class Employe {
     protected float salary;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "employeType", nullable = false,insertable = false,updatable = false)
     protected EmployeType employeType;
 
     public Employe(){}
 
-    public Employe(int id,int bonus, float salary, EmployeType employeType) {
+    public Employe(int id,int bonus, float salary, EmployeType empployeType) {
          this.id = id;
          this.salary = salary;
          this.bonus = bonus;
-         this.employeType = employeType;
+         this.employeType = empployeType;
     }
 
     public String getInfo(){

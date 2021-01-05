@@ -4,8 +4,8 @@ import javax.persistence.Entity;
 
 @Entity
 public class Programmer extends Employe {
-    public Programmer(int id, int bonus, float salary ) {
-        super(id, bonus, salary, EmployeType.PROGRAMMER);
+    public Programmer(int id, int bonus, float salary, EmployeType employeType ) {
+        super(id, bonus, salary, employeType);
     }
 
     public Programmer() {

@@ -1,10 +1,7 @@
 package com.example.springbootapp;
 
 import com.example.springbootapp.Employe.EmployeeService;
-import com.example.springbootapp.model.Driver;
-import com.example.springbootapp.model.Employe;
-import com.example.springbootapp.model.Programmer;
-import com.example.springbootapp.model.Teacher;
+import com.example.springbootapp.model.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -13,7 +10,7 @@ import java.util.List;
 @Component
 public class DependencyInjectionDemo{
     EmployeeService employeService;
-    List<Employe> employes = Arrays.asList(new Programmer(0,300,2500),new Driver(0,250,1800),new Teacher(0,150,1000));
+    List<Employe> employes = Arrays.asList(new Programmer(0,300,2500, EmployeType.PROGRAMMER),new Driver(0,250,1800, EmployeType.DRIVER),new Teacher(0,150,1000, EmployeType.TEACHER));
 
     public String getSum(List<Employe> employes)
     {

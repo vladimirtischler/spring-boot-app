@@ -1,5 +1,6 @@
 package com.example.springbootapp.model;
 
+import com.example.springbootapp.Company.Company;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -23,12 +24,18 @@ public class Employe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected int id;
+
     protected int bonus;
+
     protected float salary;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "employeType", nullable = false,insertable = false,updatable = false)
     protected EmployeType employeType;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "companyId")
+    protected Company company;
 
     public Employe(){}
 
@@ -74,4 +81,13 @@ public class Employe {
     public void setEmployeType(EmployeType employeType) {
         this.employeType = employeType;
     }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
 }

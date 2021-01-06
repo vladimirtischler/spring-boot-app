@@ -1,8 +1,10 @@
 package com.example.springbootapp.Company;
 
+import com.example.springbootapp.model.Employe;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Company {
@@ -16,10 +18,14 @@ public class Company {
     @NotNull
     Address address;
 
-    public Company(Long id, String name, Address address) {
+    @OneToMany(mappedBy = "company")
+    private List<Employe> employes;
+
+    public Company(Long id, String name, Address address, List<Employe> employes) {
         this.id = id;
         this.name = name;
         this.address = address;
+        this.employes = employes;
     }
 
     public Address getAddress() {

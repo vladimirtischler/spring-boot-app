@@ -1,6 +1,7 @@
 package com.example.springbootapp.model;
 
 import com.example.springbootapp.Company.Company;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -18,6 +19,7 @@ import javax.persistence.*;
 })
 
 @Entity
+@Table(name="Employes")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "employeType", discriminatorType = DiscriminatorType.STRING)
 public class Employe {
@@ -33,17 +35,20 @@ public class Employe {
     @Column(name = "employeType", nullable = false,insertable = false,updatable = false)
     protected EmployeType employeType;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "companyId")
+    @JoinColumn(name = "company_id", insertable = false,updatable = false)
+    @ManyToOne(targetEntity = Company.class,fetch = FetchType.EAGER)
     protected Company company;
+
+    @Column(name="company_id")
+    protected Long companyId;
 
     public Employe(){}
 
-    public Employe(int id,int bonus, float salary, EmployeType empployeType) {
-         this.id = id;
+    public Employe(int bonus, float salary, EmployeType empployeType, Long companyId) {
          this.salary = salary;
          this.bonus = bonus;
          this.employeType = empployeType;
+         this.companyId = companyId;
     }
 
     public String getInfo(){
@@ -82,6 +87,14 @@ public class Employe {
         this.employeType = employeType;
     }
 
+    public Long getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
+    }
+
     public Company getCompany() {
         return company;
     }
@@ -89,5 +102,4 @@ public class Employe {
     public void setCompany(Company company) {
         this.company = company;
     }
-
 }

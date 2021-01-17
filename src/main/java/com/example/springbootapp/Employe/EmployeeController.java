@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 public class EmployeeController {
     EmployeeService employeService;
-    List<Employe> employes = Arrays.asList(new Programmer(0,300,2500,EmployeType.PROGRAMMER),new Driver(0,250,1800, EmployeType.DRIVER ),new Teacher(0,150,1000, EmployeType.TEACHER));
+    //List<Employe> employes = Arrays.asList(new Programmer(0,300,2500,EmployeType.PROGRAMMER),new Driver(0,250,1800, EmployeType.DRIVER,null ),new Teacher(0,150,1000, EmployeType.TEACHER));
 
     public EmployeeController(EmployeeService employeService){
         this.employeService = employeService;
@@ -22,15 +22,15 @@ public class EmployeeController {
         return " Hello Spring Boot";
     }
 
-    @GetMapping(value = "/bonus")
-    public int totalBonus(){
-        return employeService.getTotalBonus(employes);
-    }
-
-    @GetMapping(value = "/salary")
-    public double totalSalary(){
-        return employeService.getTotalSalary(employes);
-    }
+//    @GetMapping(value = "/bonus")
+//    public int totalBonus(){
+//        return employeService.getTotalBonus(employes);
+//    }
+//
+//    @GetMapping(value = "/salary")
+//    public double totalSalary(){
+//        return employeService.getTotalSalary(employes);
+//    }
 
     @GetMapping(value = "/snail")
     public double snail(@RequestParam double height, @RequestParam double lenght, @RequestParam double towerHeight){

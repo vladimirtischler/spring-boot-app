@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name="Companies")
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +19,7 @@ public class Company {
     @NotNull
     Address address;
 
-    @OneToMany(mappedBy = "company")
+    @OneToMany
     private List<Employe> employes;
 
     public Company(Long id, String name, Address address, List<Employe> employes) {

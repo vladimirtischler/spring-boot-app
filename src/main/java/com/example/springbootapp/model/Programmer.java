@@ -1,11 +1,13 @@
 package com.example.springbootapp.model;
 
+import com.example.springbootapp.Company.Company;
+
 import javax.persistence.Entity;
 
 @Entity
 public class Programmer extends Employe {
-    public Programmer(int id, int bonus, float salary, EmployeType employeType ) {
-        super(id, bonus, salary, employeType);
+    public Programmer(int bonus, float salary, EmployeType employeType, Long companyId) {
+        super(bonus, salary, employeType, companyId);
     }
 
     public Programmer() {

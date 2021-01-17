@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class DependencyInjectionDemo{
     EmployeeService employeService;
-    List<Employe> employes = Arrays.asList(new Programmer(0,300,2500, EmployeType.PROGRAMMER),new Driver(0,250,1800, EmployeType.DRIVER),new Teacher(0,150,1000, EmployeType.TEACHER));
+    //List<Employe> employes = Arrays.asList(new Programmer(0,300,2500, EmployeType.PROGRAMMER),new Driver(0,250,1800, EmployeType.DRIVER,null),new Teacher(0,150,1000, EmployeType.TEACHER));
 
     public String getSum(List<Employe> employes)
     {
@@ -19,7 +19,7 @@ public class DependencyInjectionDemo{
 
     public DependencyInjectionDemo(EmployeeService employeService){
         this.employeService = employeService;
-        System.out.println(getSum(employes));
+        //System.out.println(getSum(employes));
         System.out.println(employeService.writeNumber());
 
     }

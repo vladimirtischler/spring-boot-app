@@ -1,6 +1,6 @@
 package com.example.springbootapp.Company;
 
-import com.example.springbootapp.model.Employe;
+import com.example.springbootapp.Employe.model.Employe;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;

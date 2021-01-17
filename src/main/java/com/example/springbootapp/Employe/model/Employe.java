@@ -1,7 +1,6 @@
-package com.example.springbootapp.model;
+package com.example.springbootapp.Employe.model;
 
 import com.example.springbootapp.Company.Company;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 

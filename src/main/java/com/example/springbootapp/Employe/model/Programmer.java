@@ -1,6 +1,4 @@
-package com.example.springbootapp.model;
-
-import com.example.springbootapp.Company.Company;
+package com.example.springbootapp.Employe.model;
 
 import javax.persistence.Entity;
 

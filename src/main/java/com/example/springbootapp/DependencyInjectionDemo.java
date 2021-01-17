@@ -1,10 +1,9 @@
 package com.example.springbootapp;
 
 import com.example.springbootapp.Employe.EmployeeService;
-import com.example.springbootapp.model.*;
+import com.example.springbootapp.Employe.model.*;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Component

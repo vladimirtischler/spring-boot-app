@@ -1,4 +1,4 @@
-package com.example.springbootapp.model;
+package com.example.springbootapp.Employe.model;
 
 
 

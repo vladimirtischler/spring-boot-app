@@ -1,4 +1,4 @@
-package com.example.springbootapp.DatabaseEmploye;
+package com.example.springbootapp.Employe;
 
 import com.example.springbootapp.Employe.model.Employe;
 import org.springframework.data.repository.CrudRepository;

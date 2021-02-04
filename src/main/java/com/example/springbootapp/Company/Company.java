@@ -19,7 +19,7 @@ public class Company {
     @NotNull
     Address address;
 
-    @OneToMany
+    @OneToMany(mappedBy = "company")
     private List<Employe> employes;
 
     public Company(Long id, String name, Address address, List<Employe> employes) {

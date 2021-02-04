@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import javax.persistence.*;
+import java.util.List;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
@@ -24,7 +25,7 @@ import javax.persistence.*;
 public class Employe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected int id;
+    private int id;
 
     protected int bonus;
 
@@ -35,11 +36,19 @@ public class Employe {
     protected EmployeType employeType;
 
     @JoinColumn(name = "company_id", insertable = false,updatable = false)
-    @ManyToOne(targetEntity = Company.class,fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     protected Company company;
 
     @Column(name="company_id")
     protected Long companyId;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "employes_cars",joinColumns = @JoinColumn(name = "employes_id"),inverseJoinColumns = @JoinColumn(name = "car_id"))
+    protected List<Car> cars;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "employes_courses",joinColumns = @JoinColumn(name = "employe_id"),inverseJoinColumns = @JoinColumn(name = "course_id"))
+    private List<Course> courses;
 
     public Employe(){}
 
@@ -100,5 +109,21 @@ public class Employe {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 }

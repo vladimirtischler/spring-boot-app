@@ -1,8 +1,7 @@
 package com.example.springbootapp.Employe;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.springbootapp.Employe.model.Employe;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class EmployeeController {
@@ -31,5 +30,9 @@ public class EmployeeController {
     @GetMapping(value = "/snail")
     public double snail(@RequestParam double height, @RequestParam double lenght, @RequestParam double towerHeight){
         return towerHeight/height*(height+lenght);
+    }
+    @PostMapping(value = "/employeDatabase")
+    public void postEmploye(@RequestBody Employe employe){
+        employeService.saveEmploye(employe);
     }
 }

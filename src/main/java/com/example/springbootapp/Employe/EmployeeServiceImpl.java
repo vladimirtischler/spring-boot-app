@@ -7,6 +7,12 @@ import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
+    EmployeRepository employeRepository;
+
+    public EmployeeServiceImpl(EmployeRepository employeRepository) {
+        this.employeRepository = employeRepository;
+    }
+
     int number = 0;
     @Override
     public int writeNumber(){
@@ -21,5 +27,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public int getTotalBonus(List<Employe> employes) {
         return employes.stream().mapToInt(Employe::getBonus).sum();
+    }
+
+    @Override
+    public void saveEmploye(Employe employe) {
+        employeRepository.save(employe);
     }
 }

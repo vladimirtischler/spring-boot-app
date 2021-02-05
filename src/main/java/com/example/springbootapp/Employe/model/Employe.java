@@ -28,7 +28,6 @@ public class Employe {
     private int id;
 
     protected int bonus;
-
     protected float salary;
 
     @Enumerated(EnumType.STRING)
